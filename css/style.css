@@ -1,0 +1,576 @@
+/* #002060 #374176  #c00000 */
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.topbar {
+  display: flex;
+}
+
+.topbar .policeLogo {
+  height: 150px;
+}
+
+.topbar .mainTitleDiv {
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.topbar .mainTitle {
+  font-size: 35px;
+  color: #002060;
+}
+
+.topbar .mainSubText {
+  font-size: 20px;
+}
+
+.topnav {
+  background: #002060;
+  margin-top: 20px;
+  /* margin-bottom: 20px; */
+}
+
+.topnav .topnav-menu {
+  margin: 0;
+  padding: 0;
+}
+
+.topnav .navbar-nav .nav-link {
+  font-size: .9375rem;
+  position: relative;
+  padding: 1rem 1.3rem;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.arrow-down {
+  display: inline-block;
+}
+
+.arrow-down::after {
+  border-color: initial;
+  border-style: solid;
+  border-width: 0 0 1px 1px;
+  content: "";
+  height: .4em;
+  display: inline-block;
+  right: 5px;
+  top: 50%;
+  margin-left: 10px;
+  transform: rotate(-45deg) translateY(-50%);
+  transform-origin: top;
+  transition: all .3s ease-out;
+  width: .4em;
+}
+
+.topnav .container-fluid,
+.topnav .container-sm,
+.topnav .container-md,
+.topnav .container-lg,
+.topnav .container-xl {
+  padding-right: 24px;
+  padding-left: 300px;
+}
+
+@media (max-width: 1440px) {
+  .topnav .container-fluid,
+  .topnav .container-sm,
+  .topnav .container-md,
+  .topnav .container-lg,
+  .topnav .container-xl {
+      padding-right: 24px;
+      padding-left: 24px;
+  }
+}
+
+@media (min-width: 992px) {
+  .topnav .navbar-nav .nav-item:first-of-type .nav-link {
+      padding-left: 0;
+  }
+  .topnav .dropdown .dropdown-menu {
+      margin-top: 0;
+      border-radius: 0 0 0.25rem 0.25rem;
+      min-width: calc(10rem + 1.5rem);
+      font-size: calc(0.9rem - 0.01rem);
+  }
+  .topnav .dropdown .dropdown-menu .arrow-down::after {
+      right: 15px;
+      -webkit-transform: rotate(-135deg) translateY(-50%);
+      transform: rotate(-135deg) translateY(-50%);
+      position: absolute;
+  }
+  .topnav .dropdown .dropdown-menu .dropdown .dropdown-menu {
+      position: absolute;
+      top: 0;
+      left: 100%;
+      display: none;
+  }
+  .topnav .dropdown:hover>.dropdown-menu {
+      display: block;
+  }
+  .topnav .dropdown:hover>.dropdown-menu>.dropdown:hover>.dropdown-menu {
+      display: block;
+  }
+  .navbar-toggle {
+      display: none;
+  }
+  .dropdown.active>a.dropdown-item {
+      color: #313a46;
+      background-color: #f8fafc;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .topnav .navbar-nav .nav-link {
+      padding: 0.75rem 1.3rem;
+  }
+  .topnav .dropdown .dropdown-menu {
+      background-color: transparent;
+      border: none;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+      padding-left: 15px;
+  }
+  .topnav .dropdown .dropdown-item {
+      position: relative;
+      background-color: transparent;
+  }
+  .topnav .navbar-dark .dropdown .dropdown-item {
+      color: rgba(255, 255, 255);
+  }
+  .topnav .navbar-dark .dropdown .dropdown-item.active,
+  .topnav .navbar-dark .dropdown .dropdown-item:active {
+      color: #fff;
+  }
+  .topnav .arrow-down::after {
+      right: 15px;
+      position: absolute;
+  }
+}
+
+.dropdown-toggle {
+  white-space: nowrap;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: .255em;
+  vertical-align: .255em;
+  content: "";
+  border-top: .25em solid;
+  border-right: .25em solid transparent;
+  border-bottom: 0;
+  border-left: .25em solid transparent;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+  color: #272e37;
+  text-decoration: none;
+  background-color: #e9ecef;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+  color: #313a46;
+  text-decoration: none;
+  background-color: #f8fafc;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
+.arrow-none:after {
+  display: none;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: .375rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #6c757d;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: 0;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+      flex-flow: row nowrap;
+      -webkit-box-pack: start;
+      -ms-flex-pack: start;
+      justify-content: flex-start;
+  }
+  .navbar-expand-lg .navbar-nav {
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row;
+  }
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+  }
+  .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+  }
+  .navbar-expand-lg>.container,
+  .navbar-expand-lg>.container-fluid,
+  .navbar-expand-lg>.container-sm,
+  .navbar-expand-lg>.container-md,
+  .navbar-expand-lg>.container-lg,
+  .navbar-expand-lg>.container-xl {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  }
+  .navbar-expand-lg .navbar-nav-scroll {
+      overflow: visible;
+  }
+  .navbar-expand-lg .navbar-collapse {
+      display: -webkit-box !important;
+      display: -ms-flexbox !important;
+      display: flex !important;
+      -ms-flex-preferred-size: auto;
+      flex-basis: auto;
+  }
+  .navbar-expand-lg .navbar-toggler {
+      display: none;
+  }
+}
+
+.policeImageGalleryCarousel .carousel-inner .carousel-item img {
+  height: 500px;
+}
+/* Profile Section */
+.profileSection {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+.profileSection .commissionerDiv1 {
+  border-radius: 5px;
+  /* box-shadow: 0 3px 20px -2px rgb(20 45 100 / 10%); */
+  transition: all 300ms linear 0s;
+  padding: 30px;
+  text-align: center;
+}
+.profileSection .commissionerDiv2 {
+  margin-left: auto;
+  border-radius: 5px;
+  /* box-shadow: 0 3px 20px -2px rgb(20 45 100 / 10%); */
+  transition: all 300ms linear 0s;
+  padding: 30px;
+  text-align: center;
+}
+.profileSection .commissionerDiv2 .cpara {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  text-align: left;
+}
+.profileSection .commisionerLogo {
+  height: 200px;
+  width: 200px;
+}
+.profileSection .cName {
+  padding-top: 10px;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #002060;
+}
+.profileSection .cRole {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #c00000;
+  margin-bottom: 0px;
+}
+/* Profile Section */
+
+/* Icons Section */
+.iconsSection {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #f6f9ff;
+}
+.iconsSection .iconsCol {
+  padding: 15px;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+}
+.iconsSection .iconsDiv {
+  width: 100%;
+  box-shadow: 0px 0 25px 0 rgb(0 0 0 / 10%);
+  padding: 40px 30px;
+  transition: all ease-in-out 0.4s;
+  background: #fff;
+}
+.iconsSection .iconsDiv:hover {
+  transform: translateY(-10px);
+}
+.iconsSection .iconsLink {
+  display: block;
+  text-decoration: none;
+  margin: 10px 0px;
+  color: #002060;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.iconsSection .iconsImg {
+  border-radius: 50%;
+  margin: 5px 0px;
+} 
+/* Icons Section */
+/* Contact Section */
+.contactsSection {
+  padding: 60px 0;
+}
+.contactSectionHeading {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.contactSectionHeading p {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 38px;
+  line-height: 42px;
+  font-weight: 700;
+  color: #002060;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.contactsSection .contactSectionSubHeading {
+  text-align: center;
+  padding-bottom: 20px;
+}
+.contactsSection .contactSectionSubHeading h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 30px;
+  line-height: 42px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.contactsSection .contactInfo {
+  color: #444444;
+  background: #f6f9ff;
+  padding: 30px;
+  width: 100%;
+  /* display: flex; */
+  /* text-align: center; */
+}
+.contactsSection .contactInfo i {
+  font-size: 38px;
+  line-height: 1;
+  color: #002060;
+}
+.contactsSection .contactInfo h3 {
+  font-size: 20px;
+  color: #970505;
+  font-weight: 700;
+  margin: 20px 0 10px 0;
+}
+.contactsSection .contactInfo p {
+  padding: 0;
+  line-height: 24px;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+/* Contact Section */
+/* Footer */
+.footer {
+  background-color: #f6f9ff;
+  padding: 30px;
+  color: #002060;
+}
+.footer .copyright {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+/* Footer */
+
+/* About Page */
+
+/* About section */
+.aboutSection {
+  padding: 30px;
+}
+.aboutSection .aboutSectionHeading {
+  padding-bottom: 15px;
+}
+.aboutSectionHeading h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.aboutSection .aboutSectionContent p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  line-height: 24px;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+/* About section */
+/* About table section */
+.aboutTable .aboutTableHeading h3 {
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.aboutTable .thead-dark th {
+  background-color: #002060;
+  border-color: #022e88;
+  text-align: center;
+  text-transform: uppercase;
+}
+.aboutTable .table-hover tbody tr:hover {
+  background-color: #f6f9ff;
+}
+/* About table section */
+/* About Links */
+.aboutLinks {
+  padding: 30px;
+}
+.aboutLinks .aboutLinksDiv a {
+  font-size: 16px;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+}
+/* About Links */
+/* About Section */
+
+/* Report Crime */
+.reportCrimeSection {
+  padding: 30px;
+}
+.reportCrimeSection .reportCrimeHeading {
+  padding-bottom: 15px;
+}
+.reportCrimeHeading h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.reportCrimeSection .reportCrimeContent p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  line-height: 24px;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.reportCrimeContent .reportCrimeInfo {
+  padding: 15px;
+  text-align: center;
+  background-color: #f6f9ff;
+  margin-bottom: 15px;
+}
+.reportCrimeContent .reportCrimeInfo p {
+  color: #002060;
+}
+/* Report Crime */
+/* How to obtain */
+.howToObtainSection {
+  padding: 30px;
+  height: 550px;
+  margin-bottom: auto;
+}
+.howToObtainSection .howToObtainHeading {
+  padding-bottom: 15px;
+}
+.howToObtainHeading h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.howToObtainContent .howToObtainInfo {
+  margin-bottom: 15px;
+}
+.howToObtainContent .howToObtainInfo p {
+  color: #002060;
+  font-weight: 600;
+}
+/* How to obtain */
+/* Womens corner */
+.womensCornerSection {
+  padding: 30px;
+}
+.womensCornerSection .womensCornerHeading {
+  padding-bottom: 15px;
+}
+.womensCornerHeading h3 {
+  margin: 10px 0 0 0;
+  padding: 0;
+  font-size: 25px;
+  line-height: 35px;
+  font-weight: 600;
+  color: #970505;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+}
+.womensCornerSection .womensCornerContent p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  line-height: 24px;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+.womensCornerContent .womensCornerInfo {
+  padding: 15px;
+  text-align: center;
+  background-color: #f6f9ff;
+  margin-bottom: 15px;
+}
+.womensCornerContent .womensCornerInfo p {
+  color: #002060;
+  font-size: 20px;
+  /* text-transform: uppercase  ; */
+}
+.womensCornerImg {
+  text-align: center;
+}
+.womensCornerImg img {
+  width: 270px;
+  box-shadow: 0px 0 25px 0 rgb(0 0 0 / 10%);
+}
+.womensCornerContent .womensCornerSubHeading {
+  padding: 15px 0px;
+}
+.womensCornerContent .womensCornerSubHeading p {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #002060;
+}
+.womensCornerData i {
+  color: #970505;
+}
+.womensCornerContent .womensCornerData p {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 15px 0px;
+}
+/* Womens corner */
