@@ -1,0 +1,61 @@
+@layout('layouts.main')
+@section('content')
+<main class="content">
+  <div class="container-fluid p-0">
+
+    <h1 class="h3 mb-3">Add Contact</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-2">Add Contact Form</h5>
+                <form action="/storeContact" method="post" enctype="multipart/form-data">
+                    <div class="row mb-2">
+                        <div class="col-md-4">
+                            <label class="form-label">Name</label>
+                            <input type="text" class="form-control" placeholder="Name" name="name">
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Role</label>
+                            <select class="form-select mb-3" name="role">
+                                <option selected>Select...</option>
+                                <option value="CP">Commissioner of Police</option>
+                                <option value="DCP">Dy. Commissioner of Police</option>
+                                <option value="ADLDCP">Addl. Dy. Commissioner of Police</option>
+                                <option value="ACP">Asst. Commissioner of Police</option>
+                                <option value="INS">Inspector of Police</option>
+                                <option value="SI">Sub-Inspector of Police</option>
+                                <option value="CI">Circle-Inspector of Police</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label class="form-label">Display Picture</label>
+                            <input type="file" class="form-control" name="dp" accept="image/*" onchange="loadImg(event)">
+                            <img id="previewImage" class="mt-2">
+                           
+                        </div>
+                    </div>    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    var loadImg = function(event) {
+        var preview = document.getElementById('previewImage');
+        preview.src = URL.createObjectURL(event.target.files[0]);
+        preview.onload = function() {
+        URL.revokeObjectURL(preview.src) // free memory
+        preview.style.height = "100px";
+        preview.style.width = "100px"
+        }
+    };
+</script>
+<script src="js/idleTimer.js"></script>
+@endsection

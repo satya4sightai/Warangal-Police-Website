@@ -1,0 +1,39 @@
+@layout('layouts.main')
+@section('content')
+<main class="content">
+  <div class="container-fluid p-0">
+
+    <h1 class="h3 mb-3">Add Press Release</h1>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+            <div class="card-body">
+                <h5 class="card-title mb-2">Add Press Release Form</h5>
+                <form action="/storePressRelease" method="post" enctype="multipart/form-data">
+                    <div class="row mb-2">
+                        <div class="col-md-12 mb-3">
+                            <label class="form-label">Title</label>
+                            <input type="text" class="form-control" placeholder="Title" name="title">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Press Release Date</label>
+                            <input type="date" class="form-control" placeholder="Press Release Date" name="rDate">                            
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Press Release pdf File Upload</label>
+                            <input type="file" class="form-control" name="pdf" accept=".pdf">
+                        </div>
+                    </div>   
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="js/idleTimer.js"></script>
+@endsection

@@ -1,0 +1,100 @@
+@layout('layouts.main')
+@section('content')
+<main class="content">
+  <div class="container-fluid p-0">
+
+    <h1 class="h3 mb-3">Contacts</h1>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-header">
+            <a class="btn btn-primary mb-3" href="/addContact">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle align-middle me-2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+              <span>Add Contact</span></a>
+            <h5 class="card-title mb-0">List of Contacts</h5>
+          </div>
+          <div class="card-body">
+            <table id="example" class="display" style="width:100%">
+              <thead>
+                  <tr>
+                      <th>SNo</th>
+                      <th>Display Picture</th>
+                      <th>Name</th>
+                      <th>Role</th>
+                      <!--th>Actions</th-->
+                  </tr>
+              </thead>
+              <tbody>
+                @each(contact in contacts)
+                <tr>
+                  <td>{{$loop.index + 1}}</td>
+                  <td>
+                    <img src="{{contact.dp}}" alt="{{contact.fnm}}" width="80px" height="80px">
+                  </td>
+                  <td>{{contact.name}}</td>
+                  @if(contact.role === "CP")
+                  <td>
+                    Commissioner of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "DCP")
+                  <td>
+                    Dy. Commissioner of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "ADLDCP")
+                  <td>
+                    Addl. Dy. Commissioner of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "ACP")
+                  <td>
+                    Asst. Commissioner of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "INS")
+                  <td>
+                    Inspector of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "SI")
+                  <td>
+                    Sub-Inspector of Police
+                  </td>
+                  @endif
+                  @if(contact.role === "CI")
+                  <td>
+                    Circle-Inspector of Police
+                  </td>
+                  @endif
+                  <!--td>
+                    <form action="/deleteContact?id={{contact._id}}" method="post">
+                      <button class="btn btn-danger">Delete</button>
+                    </form>
+                  </td-->
+                </tr>
+                @endeach
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.11.1/js/jquery.dataTables.min.js"></script>
+<script>
+ $(document).ready(function() {
+    $('#example').DataTable({
+        // "order": [['0', 'dsc']],
+        "columnDefs": [
+          { orderable: false, targets: [0, 1, 2, 3] }
+        ],
+    });
+} );
+</script>
+<script src="js/idleTimer.js"></script>
+@endsection
